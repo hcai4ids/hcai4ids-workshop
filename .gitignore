@@ -1,0 +1,16 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+
+# Local environment files
+.env
+.env.*
+
+# Generated deployment folders
+dist/
+build/
+
+# Local logs
+*.log

@@ -1,0 +1,9 @@
+id,title,description,icon
+1,Design Perspectives of HCAI4IDS,How do we design to support joint immersive data sensemaking (IDS) for single/multiple users and AI agents in shared immersive spaces?,design
+2,Theoretical HCAI Guidelines in IDS,How can we support novel design guidelines for varying levels of AI integration?,theory
+3,Multimodal Human-AI Understanding,How can multimodal techniques (speech, gesture, gaze, etc.) be used to understand users' emotions and intent in IDS?,multimodal
+4,Adaptive AI Collaborators,How can AI systems be adapted and personalized to support different stakeholders, user groups, and user experiences?,adaptive
+5,Initiative and Agency,When should AI lead, follow, or step back in IDS, and how should control shift between users and systems?,agency
+6,Trust Calibration,How can immersive systems support calibrated rather than amplified trust, helping users align reliance with actual AI reliability?,trust
+7,New HCAI4IDS Applications,What novel scenarios can HCAI-integrated IDS contribute to?,applications
+8,Evaluation Approaches,Should we rethink how to evaluate HCAI-supported IDS systems?,evaluation

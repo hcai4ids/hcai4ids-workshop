@@ -1,0 +1,5 @@
+id,label,url,button_text,type,description
+1,Submission Portal,TBD,Submit Your Abstract,primary,"Submit your extended abstract (2-4 pages) via the submission portal"
+2,ACM Template,https://www.acm.org/publications/proceedings-template,Download Template,secondary,ACM standard single-column format template
+3,Contact Email,mailto:organizers.hcai4ids@gmail.com,Contact Organizers,secondary,Reach out with questions or inquiries
+4,NordiCHI 2026,https://www.nordichi.org,Learn About NordiCHI,secondary,Visit the main NordiCHI 2026 conference website

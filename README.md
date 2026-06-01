@@ -6,7 +6,7 @@ This is a plain static website designed for easy hosting on GitHub Pages. Conten
 
 ## Recommended Hosting
 
-Use **GitHub Pages**.
+Use **GitHub Pages** with a dedicated GitHub account registered to `organizers.hcai4ids@gmail.com`.
 
 GitHub Pages is the best fit for this site because:
 
@@ -18,6 +18,12 @@ GitHub Pages is the best fit for this site because:
 Google Sites is possible, but it would require manually rebuilding the layout and would not preserve the CSV-driven workflow.
 
 See `DEPLOY.md` for the step-by-step GitHub Pages setup.
+
+The local Git repository is configured to use:
+
+```text
+HCAI4IDS Organizers <organizers.hcai4ids@gmail.com>
+```
 
 ## Pages
 

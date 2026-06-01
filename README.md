@@ -19,6 +19,12 @@ Google Sites is possible, but it would require manually rebuilding the layout an
 
 See `DEPLOY.md` for the step-by-step GitHub Pages setup.
 
+Live site:
+
+```text
+https://hcai4ids.github.io/hcai4ids-workshop/
+```
+
 The local Git repository is configured to use:
 
 ```text

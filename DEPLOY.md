@@ -24,10 +24,10 @@ The site URL will usually be:
 https://<github-username>.github.io/<repository-name>/
 ```
 
-For example:
+This site is published at:
 
 ```text
-https://<github-username>.github.io/hcai4ids-workshop/
+https://hcai4ids.github.io/hcai4ids-workshop/
 ```
 
 ## What to Update Later

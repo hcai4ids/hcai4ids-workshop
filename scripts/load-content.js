@@ -49,7 +49,7 @@ function parseCSV(csv) {
 // Load and parse CSV file
 async function loadCSV(filename) {
     try {
-        const response = await fetch(`data/${filename}`);
+        const response = await fetch(`data/${filename}?v=20260602-photos`);
         const csv = await response.text();
         return parseCSV(csv);
     } catch (error) {
@@ -204,7 +204,7 @@ async function populateOrganizers() {
         <div class="organizer-card">
             <div class="organizer-header">
                 <div class="organizer-image">
-                    ${org.profile_image ? `<img src="images/${org.profile_image}" alt="${org.name}">` : getInitials(org.name)}
+                    ${org.profile_image ? `<img src="${org.profile_image}" alt="${org.name}">` : getInitials(org.name)}
                 </div>
                 <div class="organizer-heading">
                     <div class="organizer-name">${org.name}</div>

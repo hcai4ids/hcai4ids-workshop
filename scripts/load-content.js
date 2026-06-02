@@ -202,11 +202,16 @@ async function populateOrganizers() {
         .map(
             org => `
         <div class="organizer-card">
-            <div class="organizer-image">
-                ${org.profile_image ? `<img src="images/${org.profile_image}" alt="${org.name}">` : getInitials(org.name)}
+            <div class="organizer-header">
+                <div class="organizer-image">
+                    ${org.profile_image ? `<img src="images/${org.profile_image}" alt="${org.name}">` : getInitials(org.name)}
+                </div>
+                <div class="organizer-heading">
+                    <div class="organizer-name">${org.name}</div>
+                    <div class="organizer-affiliation">${org.affiliation}</div>
+                    <div class="organizer-meta">${org.role}${org.country ? ` · ${org.country}` : ''}</div>
+                </div>
             </div>
-            <div class="organizer-name">${org.name}</div>
-            <div class="organizer-affiliation">${org.affiliation}</div>
             <div class="organizer-bio">${org.bio}</div>
             <div class="organizer-email"><a href="mailto:${org.email}">${org.email}</a></div>
         </div>

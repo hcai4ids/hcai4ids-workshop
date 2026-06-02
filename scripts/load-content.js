@@ -209,11 +209,10 @@ async function populateOrganizers() {
                 <div class="organizer-heading">
                     <div class="organizer-name">${org.name}</div>
                     <div class="organizer-affiliation">${org.affiliation}</div>
-                    <div class="organizer-meta">${org.role}${org.country ? ` · ${org.country}` : ''}</div>
+                    <div class="organizer-email"><a href="mailto:${org.email}">${org.email}</a></div>
                 </div>
             </div>
             <div class="organizer-bio">${org.bio}</div>
-            <div class="organizer-email"><a href="mailto:${org.email}">${org.email}</a></div>
         </div>
     `
         )

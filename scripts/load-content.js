@@ -67,6 +67,18 @@ function getInitials(name) {
         .join('');
 }
 
+function formatDate(dateString) {
+    const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateString);
+    if (!match) return dateString;
+
+    const date = new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+    return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+}
+
 // Populate Important Dates Section
 async function populateDates() {
     const container = document.getElementById('dates-content');
@@ -79,11 +91,11 @@ async function populateDates() {
     container.innerHTML = dates
         .map(
             date => `
-        <tr>
-            <td>${date.label}</td>
-            <td><strong>${date.date}</strong></td>
-            <td>${date.description}</td>
-        </tr>
+        <div class="date-row">
+            <div class="date-label">${date.label}</div>
+            <div class="date-value">${formatDate(date.date)}</div>
+            <div class="date-description">${date.description}</div>
+        </div>
     `
         )
         .join('');
@@ -143,30 +155,16 @@ async function populateGuidelines() {
     const guidelines = await loadCSV('guidelines.csv');
     if (guidelines.length === 0) return;
 
-    const rows = guidelines
+    container.innerHTML = guidelines
         .map(
             guideline => `
-        <tr>
-            <td><strong>${guideline.section}</strong></td>
-            <td>${guideline.guideline}</td>
-            <td>${guideline.detail}</td>
-        </tr>
+        <div class="guideline-row">
+            <div class="guideline-label">${guideline.guideline}</div>
+            <div class="guideline-detail">${guideline.detail}</div>
+        </div>
     `
         )
         .join('');
-
-    container.innerHTML = `
-        <thead>
-            <tr>
-                <th>Section</th>
-                <th>Guideline</th>
-                <th>Detail</th>
-            </tr>
-        </thead>
-        <tbody>
-            ${rows}
-        </tbody>
-    `;
 }
 
 // Populate Call-to-Action Buttons
@@ -180,6 +178,10 @@ async function populateCTA() {
 
     container.innerHTML = ctas
         .map(cta => {
+            if (!cta.url || cta.url === 'TBD') {
+                return `<span class="btn btn-primary btn-disabled" title="${cta.description}">Submission Portal Coming Soon</span>`;
+            }
+
             const btnClass = cta.type === 'primary' ? 'btn-primary' : 'btn-secondary';
             return `
             <a href="${cta.url}" class="btn ${btnClass}" title="${cta.description}">

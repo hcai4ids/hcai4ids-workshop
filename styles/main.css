@@ -167,6 +167,90 @@ a:hover {
     color: var(--accent-light);
 }
 
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-label {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text-light);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.nav-dropdown-label:hover,
+.nav-dropdown-label:focus-visible {
+    color: var(--accent);
+    outline: none;
+}
+
+.nav-dropdown-label.active {
+    color: var(--accent-light);
+}
+
+.nav-dropdown-label span {
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+.nav-submenu {
+    position: absolute;
+    top: calc(100% + var(--spacing-sm));
+    left: 0;
+    z-index: 120;
+    display: none;
+    min-width: 255px;
+    padding: var(--spacing-xs) 0;
+    list-style: none;
+    background-color: #173247;
+    border-radius: 4px;
+    box-shadow: var(--shadow-lg);
+}
+
+.nav-submenu::before {
+    content: "";
+    position: absolute;
+    top: calc(-1 * var(--spacing-sm));
+    left: 0;
+    width: 100%;
+    height: var(--spacing-sm);
+}
+
+.nav-submenu li {
+    margin: 0;
+}
+
+.nav-submenu a {
+    display: block;
+    padding: 0.8rem var(--spacing-md);
+    color: var(--text-light);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.nav-submenu a:hover,
+.nav-submenu a:focus-visible {
+    color: var(--text-light);
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+}
+
+.nav-dropdown:hover .nav-submenu,
+.nav-dropdown:focus-within .nav-submenu {
+    display: block;
+}
+
+.nav-dropdown:hover .nav-dropdown-label span,
+.nav-dropdown:focus-within .nav-dropdown-label span {
+    transform: rotate(180deg);
+}
+
 /* ===========================
    Hero Section
    =========================== */
@@ -366,13 +450,6 @@ tbody tr:hover {
 }
 
 /* Dates and Schedule Sections */
-.dates-table {
-    background-color: var(--bg-white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-}
-
 .schedule-timeline {
     display: grid;
     gap: var(--spacing-md);
@@ -515,45 +592,79 @@ tbody tr:hover {
 }
 
 /* Call for Participation Section */
-.cfp-block {
+.submission-content {
+    max-width: 1080px;
+}
+
+.submission-section {
+    scroll-margin-top: 90px;
+    padding: var(--spacing-xl) 0;
+    background: none !important;
+    border-bottom: 1px solid var(--border);
+}
+
+.submission-section:first-child {
+    padding-top: 0;
+}
+
+.submission-section:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.submission-section h2 {
+    margin-bottom: var(--spacing-lg);
+    border-bottom-width: 2px;
+    padding-bottom: var(--spacing-sm);
+}
+
+.submission-section h3 {
     margin-top: var(--spacing-xl);
+    font-size: 1.45rem;
 }
 
-.cfp-block:first-child {
-    margin-top: 0;
-}
-
-.cfp-invitation {
-    max-width: 1080px;
-}
-
-.cfp-invitation .intro-text {
-    margin-bottom: var(--spacing-md);
-}
-
-.contribution-forms {
-    margin-bottom: var(--spacing-xl);
-    padding: var(--spacing-md) var(--spacing-lg);
-    background-color: var(--bg-light);
-    border-left: 4px solid var(--secondary);
-    border-radius: 4px;
-}
-
-.contribution-forms p {
-    margin-bottom: 0;
-    font-size: 1.02rem;
-}
-
-.contribution-focus-list {
-    list-style: none;
-    max-width: 1080px;
-    margin: var(--spacing-lg) 0 0;
+.dates-list,
+.guidelines-list {
+    margin: var(--spacing-lg) 0;
     border-top: 1px solid var(--border);
 }
 
-.contribution-focus-list li {
+.date-row {
+    display: grid;
+    grid-template-columns: minmax(190px, 0.8fr) minmax(150px, 0.55fr) minmax(280px, 1.5fr);
+    gap: var(--spacing-lg);
+    align-items: baseline;
     padding: var(--spacing-md) 0;
     border-bottom: 1px solid var(--border);
+}
+
+.date-label,
+.date-value,
+.guideline-label {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.date-description {
+    font-size: 1rem;
+}
+
+.guideline-row {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.7fr) minmax(300px, 1.7fr);
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.contribution-focus-list {
+    max-width: 1080px;
+    margin: var(--spacing-lg) 0;
+    padding-left: 1.35rem;
+}
+
+.contribution-focus-list li {
+    padding: 0 0 var(--spacing-sm) var(--spacing-xs);
     font-size: 1.05rem;
     line-height: 1.65;
 }
@@ -562,37 +673,15 @@ tbody tr:hover {
     color: var(--primary);
 }
 
-.cfp-content {
-    background-color: var(--bg-white);
-    padding: var(--spacing-lg);
-    border-radius: 8px;
-    box-shadow: var(--shadow-sm);
-}
-
-.welcome-list,
-.contribution-types {
-    list-style: none;
+.plain-info-list {
     margin: var(--spacing-lg) 0;
+    padding-left: 1.35rem;
 }
 
-.welcome-list li,
-.contribution-types li {
-    padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-lg);
-    position: relative;
-}
-
-.welcome-list li:before,
-.contribution-types li:before {
-    content: "\2713";
-    position: absolute;
-    left: 0;
-    color: var(--success);
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.guidelines-table {
-    margin: var(--spacing-lg) 0;
+.plain-info-list li {
+    margin-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-xs);
+    font-size: 1.05rem;
 }
 
 /* Call-to-Action Buttons */
@@ -639,6 +728,17 @@ tbody tr:hover {
     background-color: var(--secondary);
     color: var(--text-light);
     text-decoration: none;
+}
+
+.btn-disabled {
+    cursor: default;
+    opacity: 0.68;
+}
+
+.btn-disabled:hover {
+    background-color: var(--secondary);
+    transform: none;
+    box-shadow: none;
 }
 
 /* Outcomes Section */
@@ -864,6 +964,23 @@ tbody tr:hover {
         gap: var(--spacing-sm);
     }
 
+    .nav-dropdown {
+        text-align: center;
+    }
+
+    .nav-submenu {
+        position: static;
+        display: none;
+        min-width: min(300px, calc(100vw - 2rem));
+        margin-top: var(--spacing-sm);
+        text-align: left;
+    }
+
+    .nav-dropdown:focus-within .nav-submenu,
+    .nav-dropdown:hover .nav-submenu {
+        display: block;
+    }
+
     h1 {
         font-size: 1.8rem;
     }
@@ -914,6 +1031,12 @@ tbody tr:hover {
 
     th, td {
         padding: var(--spacing-sm);
+    }
+
+    .date-row,
+    .guideline-row {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
     }
 
     .schedule-block,

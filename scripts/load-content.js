@@ -49,7 +49,7 @@ function parseCSV(csv) {
 // Load and parse CSV file
 async function loadCSV(filename) {
     try {
-        const response = await fetch(`data/${filename}?v=20260602-photos`);
+        const response = await fetch(`data/${filename}?v=20260602-program`);
         const csv = await response.text();
         return parseCSV(csv);
     } catch (error) {
@@ -101,12 +101,13 @@ async function populateSchedule() {
     container.innerHTML = schedule
         .map(
             item => `
-        <tr>
-            <td><strong>${item.time}</strong></td>
-            <td><strong>${item.activity}</strong></td>
-            <td>${item.description}</td>
-            <td>${item.duration_minutes} min</td>
-        </tr>
+        <article class="schedule-block schedule-${item.type}">
+            <div class="schedule-time">${item.time}</div>
+            <div class="schedule-details">
+                <h3>${item.activity}</h3>
+                <p>${item.description}</p>
+            </div>
+        </article>
     `
         )
         .join('');

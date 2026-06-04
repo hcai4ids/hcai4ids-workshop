@@ -57,20 +57,19 @@ class WorkshopGenerator:
         html += '</tbody>\n</table>\n'
         return html
 
-    def render_schedule_table(self):
-        """Render HTML for schedule table"""
-        html = '<table>\n<thead>\n<tr>'
-        html += '<th>Time</th><th>Activity</th><th>Description</th><th>Duration</th>\n</tr>\n</thead>\n<tbody>\n'
+    def render_schedule_blocks(self):
+        """Render HTML for schedule blocks"""
+        html = ''
 
         for item in self.data['schedule']:
-            html += f'<tr>\n'
-            html += f'<td><strong>{item["time"]}</strong></td>\n'
-            html += f'<td><strong>{item["activity"]}</strong></td>\n'
-            html += f'<td>{item["description"]}</td>\n'
-            html += f'<td>{item["duration_minutes"]} min</td>\n'
-            html += f'</tr>\n'
+            html += f'<article class="schedule-block schedule-{item["type"]}">\n'
+            html += f'<div class="schedule-time">{item["time"]}</div>\n'
+            html += '<div class="schedule-details">\n'
+            html += f'<h3>{item["activity"]}</h3>\n'
+            html += f'<p>{item["description"]}</p>\n'
+            html += '</div>\n'
+            html += '</article>\n'
 
-        html += '</tbody>\n</table>\n'
         return html
 
     def render_topics_cards(self):
@@ -138,7 +137,7 @@ class WorkshopGenerator:
         # Replace dynamic content placeholders
         replacements = {
             'id="dates-content"': f'id="dates-content">{self.render_dates_table()}</table-->',
-            'id="schedule-content"': f'id="schedule-content">{self.render_schedule_table()}</table-->',
+            'id="schedule-content"': f'id="schedule-content">{self.render_schedule_blocks()}</div-->',
             'id="topics-content"': f'id="topics-content">\n{self.render_topics_cards()}</div-->',
             'id="guidelines-content"': f'id="guidelines-content">\n{self.render_guidelines_table()}</table-->',
             'id="cta-content"': f'id="cta-content">\n{self.render_cta_buttons()}</div-->',

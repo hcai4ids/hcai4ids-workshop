@@ -1,8 +1,8 @@
-id,time,activity,description,duration_minutes
-1,9:30,Workshop Introduction,"Opening and introduction to the workshop theme, goals, and agenda",15
-2,9:45,Presentations,Participants with accepted extended abstracts present their work,45
-3,10:30,Coffee Break (30mins),"Break with networking, in which potential demos are showcased",30
-4,11:00,Theme-Based Group Work,"Discussion in smaller groups (2-3 people) on workshop themes, opportunities, and challenges",60
-5,0:00,Group Work Outcomes,Shared discussion and group feedback around the themes,30
-6,12:30,Future Work (wrap up),"Wrap-up with workshop synthesis, research agenda, and future roadmap",30
-7,13:00:00 PM,Lunch,Networking continues over lunch,TBD
+id,time,activity,type,description
+1,9.30--9.45,Workshop Introduction,organizer,"Opening remarks, workshop goals, and agenda overview"
+2,9.45--10.30,Participant Presentations,presentation,"Short presentations from participants with accepted extended abstracts"
+3,10.30--11.00,Coffee Break,break,"Coffee break, informal networking, and optional demo showcase"
+4,11.00--12.00,Theme-Based Group Work,group-work,"Small-group discussions around workshop themes, opportunities, and challenges"
+5,12.00--12.30,Group Work Outcomes,outcomes,"Group feedback, synthesis, and shared discussion across themes"
+6,12.30--13.00,Future Work and Wrap-Up,organizer,"Workshop synthesis, research agenda, and future collaboration roadmap"
+7,13.00--14.00,Lunch,break,"Networking continues over lunch"

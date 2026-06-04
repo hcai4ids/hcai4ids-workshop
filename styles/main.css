@@ -173,9 +173,9 @@ a:hover {
 
 .hero {
     background:
-        linear-gradient(90deg, rgba(16, 40, 56, 0.92) 0%, rgba(16, 40, 56, 0.72) 50%, rgba(16, 40, 56, 0.9) 100%),
-        linear-gradient(180deg, rgba(16, 40, 56, 0.15) 0%, rgba(16, 40, 56, 0.85) 100%),
-        url("../images/hero-hcai4ids.png") center center / cover no-repeat,
+        linear-gradient(90deg, rgba(16, 40, 56, 0.86) 0%, rgba(16, 40, 56, 0.48) 52%, rgba(16, 40, 56, 0.26) 100%),
+        linear-gradient(180deg, rgba(16, 40, 56, 0.08) 0%, rgba(16, 40, 56, 0.58) 100%),
+        url("../images/hero-human-ai-xr.png") center right / cover no-repeat,
         var(--primary-dark);
     color: var(--text-light);
     padding: calc(var(--spacing-2xl) * 1.35) 0;
@@ -189,7 +189,7 @@ a:hover {
     max-width: 980px;
     margin: 0 auto;
     padding: var(--spacing-xl);
-    background: rgba(16, 40, 56, 0.42);
+    background: rgba(16, 40, 56, 0.50);
     border-radius: 8px;
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
 }
@@ -254,7 +254,7 @@ section:nth-child(even) {
 
 /* About Section */
 .about-content {
-    max-width: 1160px;
+    max-width: 1080px;
 }
 
 .about-lede {
@@ -305,15 +305,35 @@ section:nth-child(even) {
 
 .workshop-parts {
     list-style: none;
-    margin: var(--spacing-lg) 0;
+    margin: var(--spacing-lg) 0 var(--spacing-xl);
 }
 
 .workshop-parts li {
-    padding: var(--spacing-sm);
-    margin-bottom: var(--spacing-sm);
+    padding: 0.85rem var(--spacing-md);
+    margin-bottom: 0.75rem;
     background-color: var(--bg-light);
     border-left: 4px solid var(--accent);
-    padding-left: var(--spacing-md);
+    border-radius: 4px;
+}
+
+.focus-list {
+    margin: var(--spacing-lg) 0 var(--spacing-xl);
+    padding-left: 1.25rem;
+}
+
+.focus-list li {
+    margin-bottom: 0.85rem;
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+.outcomes-note {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--bg-light);
+    border-left: 4px solid var(--secondary);
+    border-radius: 4px;
+    font-size: 1.02rem;
 }
 
 /* Tables */
@@ -346,12 +366,105 @@ tbody tr:hover {
 }
 
 /* Dates and Schedule Sections */
-.dates-table,
-.schedule-timeline {
+.dates-table {
     background-color: var(--bg-white);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--shadow-md);
+}
+
+.schedule-timeline {
+    display: grid;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.schedule-note {
+    max-width: 880px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: #fff7ed;
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.schedule-block {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: var(--spacing-lg);
+    align-items: stretch;
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(189, 195, 199, 0.6);
+    border-left: 8px solid var(--secondary);
+    overflow: hidden;
+}
+
+.schedule-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+    color: var(--primary-dark);
+    background-color: rgba(44, 90, 160, 0.08);
+    font-weight: 800;
+    font-size: 1.05rem;
+}
+
+.schedule-details {
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.schedule-details h3 {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.35rem;
+    color: var(--primary);
+}
+
+.schedule-details p {
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+.schedule-organizer {
+    border-left-color: var(--secondary);
+}
+
+.schedule-organizer .schedule-time {
+    background-color: rgba(44, 90, 160, 0.12);
+}
+
+.schedule-presentation {
+    border-left-color: #5b6fa8;
+}
+
+.schedule-presentation .schedule-time {
+    background-color: rgba(91, 111, 168, 0.12);
+}
+
+.schedule-break {
+    border-left-color: #8aa6a3;
+}
+
+.schedule-break .schedule-time {
+    background-color: rgba(138, 166, 163, 0.16);
+}
+
+.schedule-group-work {
+    border-left-color: var(--accent);
+}
+
+.schedule-group-work .schedule-time {
+    background-color: rgba(199, 90, 58, 0.12);
+}
+
+.schedule-outcomes {
+    border-left-color: #2f7d68;
+}
+
+.schedule-outcomes .schedule-time {
+    background-color: rgba(47, 125, 104, 0.12);
 }
 
 .note,
@@ -509,6 +622,42 @@ tbody tr:hover {
     color: var(--secondary);
 }
 
+/* Publications Section */
+.publications-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 0.85fr);
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.publication-placeholder,
+.publication-sidebar {
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-lg);
+}
+
+.publication-placeholder {
+    border-left: 4px solid var(--secondary);
+}
+
+.publication-placeholder h3,
+.publication-sidebar h3 {
+    color: var(--secondary);
+    font-size: 1.45rem;
+}
+
+.publication-placeholder p:last-child,
+.publication-sidebar p:last-child {
+    margin-bottom: 0;
+}
+
+.publication-sidebar {
+    background-color: var(--bg-light);
+    border-top: 4px solid var(--accent);
+}
+
 /* Organizers Section */
 .organizers-grid {
     display: grid;
@@ -619,6 +768,11 @@ tbody tr:hover {
     margin-bottom: var(--spacing-md);
 }
 
+.footer p,
+.footer .copyright {
+    color: var(--text-light);
+}
+
 .footer-section ul {
     list-style: none;
 }
@@ -721,6 +875,15 @@ tbody tr:hover {
 
     th, td {
         padding: var(--spacing-sm);
+    }
+
+    .schedule-block,
+    .publications-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-time {
+        justify-content: flex-start;
     }
 }
 

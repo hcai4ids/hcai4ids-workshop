@@ -273,9 +273,13 @@ a:hover {
     max-width: 980px;
     margin: 0 auto;
     padding: var(--spacing-xl);
-    background: rgba(16, 40, 56, 0.50);
+    background: rgba(9, 28, 42, 0.76);
+    border: 1px solid rgba(236, 240, 241, 0.28);
     border-radius: 8px;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    box-shadow:
+        0 28px 70px rgba(0, 0, 0, 0.44),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(7px);
 }
 
 .hero-content h1 {
@@ -336,6 +340,24 @@ section:nth-child(even) {
     padding-top: var(--spacing-xl);
 }
 
+.page-header-compact {
+    padding: var(--spacing-lg) 0;
+}
+
+.page-header-compact + .schedule {
+    padding-top: var(--spacing-lg);
+}
+
+.page-header-compact h1 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.preliminary-program {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: 1rem;
+}
+
 /* About Section */
 .about-content {
     max-width: 1080px;
@@ -385,6 +407,14 @@ section:nth-child(even) {
     margin-top: var(--spacing-2xl);
     padding-top: var(--spacing-md);
     border-top: 1px solid var(--border);
+}
+
+.program-committee {
+    max-width: 1080px;
+}
+
+.program-committee p {
+    margin-bottom: 0;
 }
 
 .workshop-parts {
@@ -453,16 +483,7 @@ tbody tr:hover {
 .schedule-timeline {
     display: grid;
     gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
-}
-
-.schedule-note {
-    max-width: 880px;
-    padding: var(--spacing-md) var(--spacing-lg);
-    background-color: #fff7ed;
-    border-left: 4px solid var(--accent);
-    border-radius: 4px;
-    font-size: 1rem;
+    margin-top: 0;
 }
 
 .schedule-block {
@@ -593,12 +614,12 @@ tbody tr:hover {
 
 /* Call for Participation Section */
 .submission-content {
-    max-width: 1080px;
+    max-width: 1040px;
 }
 
 .submission-section {
     scroll-margin-top: 90px;
-    padding: var(--spacing-xl) 0;
+    padding: 2.25rem 0;
     background: none !important;
     border-bottom: 1px solid var(--border);
 }
@@ -613,48 +634,74 @@ tbody tr:hover {
 }
 
 .submission-section h2 {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
     border-bottom-width: 2px;
     padding-bottom: var(--spacing-sm);
 }
 
 .submission-section h3 {
-    margin-top: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
     font-size: 1.45rem;
 }
 
 .dates-list,
 .guidelines-list {
-    margin: var(--spacing-lg) 0;
+    margin: var(--spacing-md) 0;
     border-top: 1px solid var(--border);
 }
 
 .date-row {
     display: grid;
-    grid-template-columns: minmax(190px, 0.8fr) minmax(150px, 0.55fr) minmax(280px, 1.5fr);
-    gap: var(--spacing-lg);
-    align-items: baseline;
-    padding: var(--spacing-md) 0;
+    grid-template-columns: 220px 175px minmax(280px, 1fr);
+    gap: var(--spacing-md);
+    align-items: center;
+    padding: 0.72rem 0;
     border-bottom: 1px solid var(--border);
 }
 
 .date-label,
-.date-value,
 .guideline-label {
     color: var(--primary);
     font-weight: 700;
 }
 
+.date-value {
+    color: var(--secondary);
+    font-weight: 800;
+}
+
+.date-row-primary .date-label,
+.date-row-primary .date-value {
+    color: var(--accent);
+}
+
 .date-description {
-    font-size: 1rem;
+    font-size: 0.96rem;
+    line-height: 1.5;
 }
 
 .guideline-row {
     display: grid;
-    grid-template-columns: minmax(180px, 0.7fr) minmax(300px, 1.7fr);
-    gap: var(--spacing-lg);
-    padding: var(--spacing-md) 0;
+    grid-template-columns: 190px minmax(300px, 1fr);
+    gap: var(--spacing-md);
+    align-items: baseline;
+    padding: 0.68rem 0;
     border-bottom: 1px solid var(--border);
+}
+
+.guideline-detail {
+    font-size: 0.98rem;
+    line-height: 1.5;
+}
+
+.deadline-note {
+    margin: var(--spacing-sm) 0 0;
+    color: var(--text-dark);
+    font-size: 0.94rem;
+}
+
+.deadline-note strong {
+    color: var(--accent);
 }
 
 .contribution-focus-list {
@@ -761,40 +808,21 @@ tbody tr:hover {
     color: var(--secondary);
 }
 
-/* Publications Section */
-.publications-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(280px, 0.85fr);
-    gap: var(--spacing-xl);
-    align-items: start;
+/* Accepted Submissions Section */
+.accepted-submissions {
+    min-height: 300px;
 }
 
-.publication-placeholder,
-.publication-sidebar {
-    background-color: var(--bg-white);
-    border-radius: 8px;
-    box-shadow: var(--shadow-sm);
-    padding: var(--spacing-lg);
+.accepted-status {
+    max-width: 900px;
+    margin: 0;
+    padding: var(--spacing-md) 0;
+    border-top: 2px solid var(--secondary);
+    border-bottom: 1px solid var(--border);
 }
 
-.publication-placeholder {
-    border-left: 4px solid var(--secondary);
-}
-
-.publication-placeholder h3,
-.publication-sidebar h3 {
-    color: var(--secondary);
-    font-size: 1.45rem;
-}
-
-.publication-placeholder p:last-child,
-.publication-sidebar p:last-child {
-    margin-bottom: 0;
-}
-
-.publication-sidebar {
-    background-color: var(--bg-light);
-    border-top: 4px solid var(--accent);
+.accepted-status strong {
+    color: var(--primary);
 }
 
 /* Organizers Section */
@@ -1039,8 +1067,7 @@ tbody tr:hover {
         gap: 0.3rem;
     }
 
-    .schedule-block,
-    .publications-layout {
+    .schedule-block {
         grid-template-columns: 1fr;
     }
 

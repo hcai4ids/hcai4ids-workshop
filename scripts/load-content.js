@@ -91,7 +91,7 @@ async function populateDates() {
     container.innerHTML = dates
         .map(
             date => `
-        <div class="date-row">
+        <div class="date-row${date.label.includes('Submission Deadline') ? ' date-row-primary' : ''}">
             <div class="date-label">${date.label}</div>
             <div class="date-value">${formatDate(date.date)}</div>
             <div class="date-description">${date.description}</div>

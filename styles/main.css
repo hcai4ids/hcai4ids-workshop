@@ -436,11 +436,11 @@ tbody tr:hover {
 }
 
 .schedule-presentation {
-    border-left-color: #5b6fa8;
+    border-left-color: var(--accent);
 }
 
 .schedule-presentation .schedule-time {
-    background-color: rgba(91, 111, 168, 0.12);
+    background-color: rgba(199, 90, 58, 0.12);
 }
 
 .schedule-break {
@@ -460,11 +460,11 @@ tbody tr:hover {
 }
 
 .schedule-outcomes {
-    border-left-color: #2f7d68;
+    border-left-color: var(--accent);
 }
 
 .schedule-outcomes .schedule-time {
-    background-color: rgba(47, 125, 104, 0.12);
+    background-color: rgba(199, 90, 58, 0.12);
 }
 
 .note,
@@ -521,6 +521,45 @@ tbody tr:hover {
 
 .cfp-block:first-child {
     margin-top: 0;
+}
+
+.cfp-invitation {
+    max-width: 1080px;
+}
+
+.cfp-invitation .intro-text {
+    margin-bottom: var(--spacing-md);
+}
+
+.contribution-forms {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--bg-light);
+    border-left: 4px solid var(--secondary);
+    border-radius: 4px;
+}
+
+.contribution-forms p {
+    margin-bottom: 0;
+    font-size: 1.02rem;
+}
+
+.contribution-focus-list {
+    list-style: none;
+    max-width: 1080px;
+    margin: var(--spacing-lg) 0 0;
+    border-top: 1px solid var(--border);
+}
+
+.contribution-focus-list li {
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+.contribution-focus-list strong {
+    color: var(--primary);
 }
 
 .cfp-content {

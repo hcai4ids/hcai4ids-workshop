@@ -960,6 +960,20 @@ tbody tr:hover {
     margin: 0;
 }
 
+.footer-maintainer {
+    text-align: center;
+    font-size: 0.85rem;
+    margin: var(--spacing-xs) 0 0;
+}
+
+.footer-maintainer a {
+    color: var(--text-light);
+}
+
+.footer-maintainer a:hover {
+    color: var(--accent);
+}
+
 /* ===========================
    Responsive Design
    =========================== */

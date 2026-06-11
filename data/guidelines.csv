@@ -1,8 +1,8 @@
 id,section,guideline,detail
 1,Format,Page Length,2-4 pages (excluding references)
-2,Format,Template,ACM standard single-column format
+2,Format,Template,ACM double-column proceedings format
 3,Format,Content,"Extended abstract describing research, prototypes, applications, theoretical discussions, or system designs"
-4,Anonymity,Author Info,Abstracts need not be anonymized but must include all authors
+4,Anonymity,Author Info,Submissions do not need to be anonymized
 5,Submission,Demo,A demo accompanying the submission is encouraged if available
 6,Review,Process,Submissions assigned to external reviewers
 7,Review,Selection,Speakers selected based on topic relevance

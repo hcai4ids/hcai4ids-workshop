@@ -640,6 +640,10 @@ tbody tr:hover {
     font-size: 1.45rem;
 }
 
+#call-for-contributions .intro-text {
+    margin-bottom: var(--spacing-md);
+}
+
 .dates-list,
 .guidelines-list {
     margin: var(--spacing-md) 0;

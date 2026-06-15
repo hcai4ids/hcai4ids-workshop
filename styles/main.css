@@ -413,6 +413,21 @@ section:nth-child(even) {
     margin-bottom: 0;
 }
 
+.program-committee-list {
+    margin: var(--spacing-md) 0 0;
+    padding-left: 1.25rem;
+}
+
+.program-committee-list:empty {
+    display: none;
+}
+
+.program-committee-list li {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.05rem;
+    line-height: 1.55;
+}
+
 .workshop-parts {
     list-style: none;
     margin: var(--spacing-lg) 0 var(--spacing-xl);

@@ -222,6 +222,26 @@ async function populateOrganizers() {
         .join('');
 }
 
+// Populate Program Committee Section
+async function populateProgramCommittee() {
+    const container = document.getElementById('program-committee-content');
+
+    if (!container) return;
+
+    const members = await loadCSV('program-committee.csv');
+    const visibleMembers = members.filter(member => member.name && member.affiliation);
+
+    if (visibleMembers.length === 0) return;
+
+    container.innerHTML = visibleMembers
+        .map(
+            member => `
+        <li><strong>${member.name}</strong> (${member.affiliation})</li>
+    `
+        )
+        .join('');
+}
+
 // Initialize all sections
 async function initializeContent() {
     await Promise.all([
@@ -230,7 +250,8 @@ async function initializeContent() {
         populateTopics(),
         populateGuidelines(),
         populateCTA(),
-        populateOrganizers()
+        populateOrganizers(),
+        populateProgramCommittee()
     ]);
 }
 

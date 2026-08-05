@@ -48,9 +48,20 @@ class WorkshopGenerator:
         html += '<th>Event</th><th>Date</th><th>Description</th>\n</tr>\n</thead>\n<tbody>\n'
 
         for date in self.data['key_dates']:
+            previous_date = date.get("previous_date", "")
+            date_note = date.get("date_note", "Extended") or "Extended"
+            if previous_date and previous_date != date["date"]:
+                date_html = (
+                    f'<span class="date-old">{previous_date}</span> '
+                    f'<strong class="date-current">{date["date"]}</strong> '
+                    f'<span class="date-badge">{date_note}</span>'
+                )
+            else:
+                date_html = f'<strong>{date["date"]}</strong>'
+
             html += f'<tr>\n'
             html += f'<td>{date["label"]}</td>\n'
-            html += f'<td><strong>{date["date"]}</strong></td>\n'
+            html += f'<td>{date_html}</td>\n'
             html += f'<td>{date["description"]}</td>\n'
             html += f'</tr>\n'
 

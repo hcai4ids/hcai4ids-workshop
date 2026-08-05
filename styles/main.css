@@ -667,7 +667,7 @@ tbody tr:hover {
 
 .date-row {
     display: grid;
-    grid-template-columns: 220px 175px minmax(280px, 1fr);
+    grid-template-columns: 220px minmax(220px, 300px) minmax(280px, 1fr);
     gap: var(--spacing-md);
     align-items: center;
     padding: 0.72rem 0;
@@ -681,6 +681,10 @@ tbody tr:hover {
 }
 
 .date-value {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.55rem;
+    align-items: center;
     color: var(--secondary);
     font-weight: 800;
 }
@@ -688,6 +692,44 @@ tbody tr:hover {
 .date-row-primary .date-label,
 .date-row-primary .date-value {
     color: var(--accent);
+}
+
+.date-row-extended {
+    padding: 0.85rem 0;
+}
+
+.date-row-extended .date-label {
+    color: var(--accent);
+}
+
+.date-old {
+    color: #697780;
+    font-weight: 700;
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--warning);
+}
+
+.date-current {
+    color: var(--accent);
+}
+
+.date-value-extended .date-current {
+    padding: 0.16rem 0.45rem;
+    border-radius: 4px;
+    background-color: rgba(199, 90, 58, 0.1);
+}
+
+.date-badge {
+    padding: 0.12rem 0.42rem;
+    border-radius: 4px;
+    color: var(--primary-dark);
+    background-color: rgba(39, 174, 96, 0.16);
+    border: 1px solid rgba(39, 174, 96, 0.38);
+    font-size: 0.76rem;
+    font-weight: 800;
+    line-height: 1.25;
+    text-transform: uppercase;
 }
 
 .date-description {

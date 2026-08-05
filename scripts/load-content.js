@@ -79,6 +79,33 @@ function formatDate(dateString) {
     });
 }
 
+function escapeHTML(value) {
+    return String(value || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function renderDateValue(date) {
+    const previousDate = date.previous_date || '';
+    const isExtended = previousDate && previousDate !== date.date;
+    const note = date.date_note || 'Extended';
+
+    if (!isExtended) {
+        return `<div class="date-value">${escapeHTML(formatDate(date.date))}</div>`;
+    }
+
+    return `
+            <div class="date-value date-value-extended">
+                <span class="date-old">${escapeHTML(formatDate(previousDate))}</span>
+                <span class="date-current">${escapeHTML(formatDate(date.date))}</span>
+                <span class="date-badge">${escapeHTML(note)}</span>
+            </div>
+        `;
+}
+
 // Populate Important Dates Section
 async function populateDates() {
     const container = document.getElementById('dates-content');
@@ -91,10 +118,10 @@ async function populateDates() {
     container.innerHTML = dates
         .map(
             date => `
-        <div class="date-row${date.label.includes('Submission Deadline') ? ' date-row-primary' : ''}">
-            <div class="date-label">${date.label}</div>
-            <div class="date-value">${formatDate(date.date)}</div>
-            <div class="date-description">${date.description}</div>
+        <div class="date-row${date.label.includes('Submission Deadline') ? ' date-row-primary' : ''}${date.previous_date && date.previous_date !== date.date ? ' date-row-extended' : ''}">
+            <div class="date-label">${escapeHTML(date.label)}</div>
+            ${renderDateValue(date)}
+            <div class="date-description">${escapeHTML(date.description)}</div>
         </div>
     `
         )

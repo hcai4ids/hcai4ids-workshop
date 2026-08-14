@@ -53,14 +53,21 @@ class WorkshopGenerator:
             if previous_date and previous_date != date["date"]:
                 date_html = (
                     f'<span class="date-old">{previous_date}</span> '
+                    f'<span class="date-arrow" aria-hidden="true">&rarr;</span> '
                     f'<strong class="date-current">{date["date"]}</strong> '
+                )
+                label_html = (
+                    f'<div class="date-label-extended">'
+                    f'<span>{date["label"]}</span>'
                     f'<span class="date-badge">{date_note}</span>'
+                    f'</div>'
                 )
             else:
                 date_html = f'<strong>{date["date"]}</strong>'
+                label_html = date["label"]
 
             html += f'<tr>\n'
-            html += f'<td>{date["label"]}</td>\n'
+            html += f'<td>{label_html}</td>\n'
             html += f'<td>{date_html}</td>\n'
             html += f'<td>{date["description"]}</td>\n'
             html += f'</tr>\n'

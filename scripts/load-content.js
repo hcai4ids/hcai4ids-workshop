@@ -49,7 +49,7 @@ function parseCSV(csv) {
 // Load and parse CSV file
 async function loadCSV(filename) {
     try {
-        const response = await fetch(`data/${filename}?v=20260814-september-deadline`);
+        const response = await fetch(`data/${filename}?v=20260814-date-layout`);
         const csv = await response.text();
         return parseCSV(csv);
     } catch (error) {
@@ -91,7 +91,6 @@ function escapeHTML(value) {
 function renderDateValue(date) {
     const previousDate = date.previous_date || '';
     const isExtended = previousDate && previousDate !== date.date;
-    const note = date.date_note || 'Extended';
 
     if (!isExtended) {
         return `<div class="date-value">${escapeHTML(formatDate(date.date))}</div>`;
@@ -100,8 +99,24 @@ function renderDateValue(date) {
     return `
             <div class="date-value date-value-extended">
                 <span class="date-old">${escapeHTML(formatDate(previousDate))}</span>
+                <span class="date-arrow" aria-hidden="true">&rarr;</span>
                 <span class="date-current">${escapeHTML(formatDate(date.date))}</span>
-                <span class="date-badge">${escapeHTML(note)}</span>
+            </div>
+        `;
+}
+
+function renderDateLabel(date) {
+    const previousDate = date.previous_date || '';
+    const isExtended = previousDate && previousDate !== date.date;
+
+    if (!isExtended) {
+        return `<div class="date-label">${escapeHTML(date.label)}</div>`;
+    }
+
+    return `
+            <div class="date-label date-label-extended">
+                <span>${escapeHTML(date.label)}</span>
+                <span class="date-badge">${escapeHTML(date.date_note || 'Extended')}</span>
             </div>
         `;
 }
@@ -119,7 +134,7 @@ async function populateDates() {
         .map(
             date => `
         <div class="date-row${date.label.includes('Submission Deadline') ? ' date-row-primary' : ''}${date.previous_date && date.previous_date !== date.date ? ' date-row-extended' : ''}">
-            <div class="date-label">${escapeHTML(date.label)}</div>
+            ${renderDateLabel(date)}
             ${renderDateValue(date)}
             <div class="date-description">${escapeHTML(date.description)}</div>
         </div>

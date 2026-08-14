@@ -49,7 +49,7 @@ function parseCSV(csv) {
 // Load and parse CSV file
 async function loadCSV(filename) {
     try {
-        const response = await fetch(`data/${filename}?v=20260805-deadline-extension`);
+        const response = await fetch(`data/${filename}?v=20260814-september-deadline`);
         const csv = await response.text();
         return parseCSV(csv);
     } catch (error) {

@@ -918,6 +918,14 @@ tbody tr:hover {
     font-size: 1rem;
 }
 
+.accepted-note {
+    max-width: 900px;
+    margin: var(--spacing-md) 0 0;
+    color: #526577;
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
 /* Organizers Section */
 .organizers-grid {
     display: grid;

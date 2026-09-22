@@ -1,6 +1,5 @@
 /**
- * Isolated loader for the program-update preview.
- * The published schedule and its loader are intentionally untouched.
+ * HCAI4IDS workshop schedule, calendar export, and print controls.
  */
 
 function parseProgramCSV(csv) {
@@ -203,8 +202,8 @@ async function populateProgramUpdate() {
 
     try {
         const [programResponse, workshopResponse] = await Promise.all([
-            fetch('data/program-update.csv?v=20260922-preview', { cache: 'no-store' }),
-            fetch('data/workshops.csv?v=20260922-preview', { cache: 'no-store' })
+            fetch('data/schedule.csv?v=20260922-program', { cache: 'no-store' }),
+            fetch('data/workshops.csv?v=20260922-program', { cache: 'no-store' })
         ]);
         if (!programResponse.ok || !workshopResponse.ok) throw new Error('Unable to load program data');
 

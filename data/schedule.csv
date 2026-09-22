@@ -1,8 +1,11 @@
-id,time,activity,type,description
-1,9.30--9.45,Workshop Introduction,organizer,"Opening remarks, workshop goals, and agenda overview"
-2,9.45--10.30,Participant Presentations,presentation,"Short presentations from participants with accepted extended abstracts"
-3,10.30--11.00,Coffee Break,break,"Coffee break, informal networking, and optional demo showcase"
-4,11.00--12.00,Theme-Based Group Work,group-work,"Small-group discussions around workshop themes, opportunities, and challenges"
-5,12.00--12.30,Group Work Outcomes,outcomes,"Group feedback, synthesis, and shared discussion across themes"
-6,12.30--13.00,Future Work and Wrap-Up,organizer,"Workshop synthesis, research agenda, and future collaboration roadmap"
-7,13.00--14.00,Lunch,break,"Networking continues over lunch"
+id,parent_id,start,end,activity,type,description,title,speaker
+1,,09:30,09:45,Workshop Introduction,organizer,"Opening remarks, workshop goals, and agenda overview",,
+2,,09:45,10:30,Participant Presentations,presentation,"Short presentations from participants with accepted extended abstracts",,
+2.1,2,09:50,10:05,Presentation 1,talk,"Presenter details to be confirmed",Supporting the Development of Designers Rather Than Designs: The Role of AI in Design Decisions for Immersive Analytics,Presenter to be confirmed
+2.2,2,10:10,10:25,Presentation 2,talk,"Presenter details to be confirmed",Where Are We with J.A.R.V.I.S.? An Analysis of Diegetic Human-AI Interaction and Design Implications for Real-World Systems,Presenter to be confirmed
+3,,10:30,11:00,Coffee Break,break,"Coffee break, informal networking, and optional demo showcase",,
+4,,11:00,11:40,Keynote Presentation,keynote,"A short keynote introduction will be added after confirmation",Title to be confirmed,Speaker to be confirmed
+4.1,,11:40,11:50,Set up group work,transition,"Room and group setup",,
+5,,11:50,12:50,Theme-Based Group Work,group-work,"Small-group discussions around workshop themes, opportunities, and challenges",,
+6,,12:50,13:00,Future Work and Wrap-Up,organizer,"Workshop synthesis, research agenda, and future collaboration roadmap",,
+7,,13:00,14:00,Lunch,break,"Networking continues over lunch",,

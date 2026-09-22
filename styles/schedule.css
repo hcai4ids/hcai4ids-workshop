@@ -8,6 +8,16 @@
     padding-bottom: var(--spacing-lg);
 }
 
+.preliminary-program {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.2rem;
+}
+
+.program-status-note {
+    flex-basis: 100%;
+}
+
 .preview-status {
     display: inline-flex;
     align-items: center;

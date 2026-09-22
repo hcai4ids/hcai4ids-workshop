@@ -6,7 +6,7 @@
     <title>Schedule | HCAI4IDS Workshop</title>
     <meta name="description" content="Schedule for the HCAI4IDS NordiCHI 2026 workshop">
     <link rel="stylesheet" href="styles/main.css?v=20260814-date-layout">
-    <link rel="stylesheet" href="styles/schedule.css?v=20260922-program2">
+    <link rel="stylesheet" href="styles/schedule.css?v=20260922-external-controls">
 </head>
 <body class="program-update-page">
     <!-- Navigation -->
@@ -38,7 +38,7 @@
         <section class="page-header page-header-compact program-update-header">
             <div class="container">
                 <!-- <p class="page-eyebrow">NordiCHI 2026 Workshop</p> -->
-                <h1>Program</h1>
+                <h1 id="program-heading">Program</h1>
                 <div class="preliminary-program" aria-label="Workshop date, location, and program status">
                     <span><strong>Date: Saturday, October 3, 2026</strong></span>
                     <span><strong>Room: TBD</strong> </span>
@@ -50,37 +50,23 @@
 
         <section class="program-update" aria-labelledby="program-heading">
             <div class="container program-update-container">
-                <div class="program-toolbar">
-                    <div>
-                        <p class="program-kicker">Workshop day</p>
-                        <h2 id="program-heading">Workshop program</h2>
+                <div class="program-layout">
+                    <div class="program-actions" aria-label="Program download and print options">
+                        <div class="program-action-buttons">
+                            <button class="program-action program-action-primary" id="download-calendar" type="button">
+                                <span aria-hidden="true">&#8595;</span>
+                                Download calendar
+                            </button>
+                            <button class="program-action" id="print-program" type="button">
+                                <span aria-hidden="true">&#9113;</span>
+                                Save as PDF
+                            </button>
+                        </div>
                     </div>
-                    <div class="program-range" aria-label="Program time range">
-                        <span>09:30</span>
-                        <span aria-hidden="true">&ndash;</span>
-                        <span>13:00</span>
-                    </div>
-                </div>
 
-                <div class="program-actions" aria-label="Program download and print options">
-                    <div class="program-actions-copy">
-                        <strong>Take the program with you</strong>
-                        <span>The calendar file works with Google Calendar, Outlook, and Apple Calendar.</span>
+                    <div class="agenda-calendar" id="program-update-content" aria-live="polite">
+                        <p class="agenda-loading">Loading program&hellip;</p>
                     </div>
-                    <div class="program-action-buttons">
-                        <button class="program-action program-action-primary" id="download-calendar" type="button">
-                            <span aria-hidden="true">&#8595;</span>
-                            Download calendar (.ics)
-                        </button>
-                        <button class="program-action" id="print-program" type="button">
-                            <span aria-hidden="true">&#9113;</span>
-                            Print / Save PDF
-                        </button>
-                    </div>
-                </div>
-
-                <div class="agenda-calendar" id="program-update-content" aria-live="polite">
-                    <p class="agenda-loading">Loading program&hellip;</p>
                 </div>
             </div>
         </section>

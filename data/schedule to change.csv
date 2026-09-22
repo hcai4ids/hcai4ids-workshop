@@ -1,8 +1,16 @@
 id,time,activity,type,description
 1,9.30--9.45,Workshop Introduction,organizer,"Opening remarks, workshop goals, and agenda overview"
 2,9.45--10.30,Participant Presentations,presentation,"Short presentations from participants with accepted extended abstracts"
+2.1, 9.50--10.05, XXXXXXXXX title 1, presentation, "XXXX"
+2.2, 10.10-10.25, XXXXXXXXX title 2, presentation, "XXXX"
+
 3,10.30--11.00,Coffee Break,break,"Coffee break, informal networking, and optional demo showcase"
-4,11.00--12.00,Theme-Based Group Work,group-work,"Small-group discussions around workshop themes, opportunities, and challenges"
-5,12.00--12.30,Group Work Outcomes,outcomes,"Group feedback, synthesis, and shared discussion across themes"
-6,12.30--13.00,Future Work and Wrap-Up,organizer,"Workshop synthesis, research agenda, and future collaboration roadmap"
+
+4, 11.00-11.40, Keynote Presentation, keynote, "XXXXTITLE\\, Presenter:NNN"
+
+ (11.40-11.50L:set up group work)
+5,11.50--12.50,Theme-Based Group Work,group-work,"Small-group discussions around workshop themes, opportunities, and challenges"
+
+6,12.50--13.00,Future Work and Wrap-Up,organizer,"Workshop synthesis, research agenda, and future collaboration roadmap"
+
 7,13.00--14.00,Lunch,break,"Networking continues over lunch"

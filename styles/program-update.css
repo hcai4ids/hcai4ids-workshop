@@ -259,7 +259,7 @@
 
 .agenda-row-secondary .agenda-event h3,
 .agenda-row-secondary .agenda-event p {
-    align-self: center;
+    align-self: flex-start;
 }
 
 .agenda-row-secondary .agenda-event h3 {

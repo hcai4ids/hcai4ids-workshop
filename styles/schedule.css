@@ -46,12 +46,12 @@
 }
 
 .program-update-container {
-    max-width: 1320px;
+    max-width: 1400px;
 }
 
 .program-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1050px) 170px;
+    grid-template-columns: minmax(0, 1120px) 170px;
     gap: var(--spacing-md);
     align-items: start;
     justify-content: center;
@@ -210,8 +210,8 @@
 .agenda-event p {
     margin: 0;
     color: #415568;
-    font-size: 0.93rem;
-    line-height: 1.5;
+    font-size: 1rem;
+    line-height: 1.55;
 }
 
 .agenda-presentation {
@@ -276,7 +276,7 @@
 
 .agenda-row-secondary .agenda-event p {
     color: #63717c;
-    font-size: 0.82rem;
+    font-size: 0.92rem;
 }
 
 .subsession-list {
@@ -320,7 +320,7 @@
 
 .subsession-copy small {
     color: #657687;
-    font-size: 0.76rem;
+    font-size: 0.84rem;
 }
 
 .keynote-placeholder {
@@ -447,7 +447,7 @@
     }
 
     .agenda-event p {
-        font-size: 0.84rem;
+        font-size: 0.92rem;
     }
 
     .subsession {

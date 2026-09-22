@@ -888,16 +888,34 @@ tbody tr:hover {
     min-height: 300px;
 }
 
-.accepted-status {
+.accepted-paper {
     max-width: 900px;
-    margin: 0;
-    padding: var(--spacing-md) 0;
-    border-top: 2px solid var(--secondary);
-    border-bottom: 1px solid var(--border);
+    padding: var(--spacing-lg);
+    background-color: var(--bg-white);
+    border-top: 3px solid var(--secondary);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
 }
 
-.accepted-status strong {
-    color: var(--primary);
+.accepted-paper h2 {
+    max-width: 820px;
+    margin-bottom: var(--spacing-md);
+    padding: 0;
+    border: 0;
+    font-size: 1.75rem;
+    line-height: 1.35;
+}
+
+.accepted-paper-authors {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.08rem;
+    font-weight: 700;
+}
+
+.accepted-paper-affiliation {
+    margin-bottom: var(--spacing-lg);
+    color: #526577;
+    font-size: 1rem;
 }
 
 /* Organizers Section */
@@ -1144,6 +1162,14 @@ tbody tr:hover {
     .organizer-card,
     .organizer-card:nth-last-child(2):nth-child(4) {
         grid-column: auto;
+    }
+
+    .accepted-paper {
+        padding: var(--spacing-md);
+    }
+
+    .accepted-paper h2 {
+        font-size: 1.45rem;
     }
 
     .cta-buttons {

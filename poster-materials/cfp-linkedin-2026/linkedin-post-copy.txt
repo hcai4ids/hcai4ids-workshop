@@ -1,0 +1,22 @@
+Call for Participation: HCAI4IDS @ NordiCHI 2026
+
+We invite research students, academics, and industry practitioners to submit extended abstracts to the NordiCHI 2026 workshop on Human-Centered AI Support for Immersive Data Sensemaking.
+
+We welcome work on human-AI collaboration, immersive analytics, XR, visualization, multimodal interaction, adaptive AI collaborators, trust calibration, and evaluation approaches for AI-supported immersive data sensemaking.
+
+Important dates:
+- Extended submission deadline: September 3, 2026, 23:59 AoE
+- Notification of acceptance: September 9, 2026
+- Camera-ready deadline: September 19, 2026
+- Workshop date: October 3, 2026
+
+Submission format:
+- 2-4 page extended abstract, excluding references
+- ACM double-column proceedings format
+- PDF submission by email
+- Submissions do not need to be anonymized
+
+Submit to: organizers.hcai4ids@gmail.com
+Workshop website: https://hcai4ids.github.io/hcai4ids-workshop/
+
+#NordiCHI2026 #HCI #HumanCenteredAI #XR #ImmersiveAnalytics #DataSensemaking #Visualization #AI

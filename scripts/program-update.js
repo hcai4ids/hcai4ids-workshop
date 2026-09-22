@@ -203,8 +203,8 @@ async function populateProgramUpdate() {
 
     try {
         const [programResponse, workshopResponse] = await Promise.all([
-            fetch('data/program-update.csv?v=20260921-preview'),
-            fetch('data/workshops.csv?v=20260921-preview')
+            fetch('data/program-update.csv?v=20260922-preview', { cache: 'no-store' }),
+            fetch('data/workshops.csv?v=20260922-preview', { cache: 'no-store' })
         ]);
         if (!programResponse.ok || !workshopResponse.ok) throw new Error('Unable to load program data');
 

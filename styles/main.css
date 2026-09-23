@@ -907,6 +907,10 @@ tbody tr:hover {
     box-shadow: var(--shadow-sm);
 }
 
+.accepted-paper + .accepted-paper {
+    margin-top: var(--spacing-lg);
+}
+
 .accepted-paper h2 {
     max-width: 820px;
     margin-bottom: var(--spacing-md);
@@ -930,10 +934,27 @@ tbody tr:hover {
 
 .accepted-note {
     max-width: 900px;
-    margin: 0 0 var(--spacing-lg);
+    margin: 0;
     color: #526577;
     font-size: 1.08rem;
     line-height: 1.55;
+}
+
+.author-email-link {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.35rem;
+    color: var(--accent);
+    font-size: 1rem;
+    line-height: 1;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.author-email-link:hover,
+.author-email-link:focus-visible {
+    color: var(--secondary);
+    text-decoration: none;
 }
 
 /* Organizers Section */

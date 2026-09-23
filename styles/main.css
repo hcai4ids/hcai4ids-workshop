@@ -943,18 +943,32 @@ tbody tr:hover {
 .author-email-link {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    width: 1.45rem;
+    height: 1.45rem;
     margin-left: 0.35rem;
+    border: 1px solid rgba(199, 90, 58, 0.45);
+    border-radius: 50%;
+    background: #fff7f3;
     color: var(--accent);
-    font-size: 1rem;
+    font-size: 0.78rem;
     line-height: 1;
     text-decoration: none;
+    transform: translateY(-0.03rem);
     vertical-align: middle;
 }
 
 .author-email-link:hover,
 .author-email-link:focus-visible {
-    color: var(--secondary);
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--text-light);
     text-decoration: none;
+}
+
+.author-email-link:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
 }
 
 /* Organizers Section */

@@ -375,6 +375,7 @@ section:nth-child(even) {
 .home-keynote-spotlight {
     width: 100%;
     padding-top: calc(4.87rem + 0.35rem);
+    transform: translateX(clamp(0rem, calc((100vw - 1440px) * 0.06), 2rem));
 }
 
 .home-keynote-section-label {
@@ -459,12 +460,26 @@ section:nth-child(even) {
 }
 
 .home-keynote-title {
+    position: relative;
     margin: 0 0 0.55rem;
+    padding-left: 1.05rem;
     color: #394e5d;
     font-family: var(--font-heading);
     font-size: 0.86rem;
     font-weight: 700;
     line-height: 1.32;
+}
+
+.home-keynote-title::before {
+    position: absolute;
+    top: -0.12rem;
+    left: 0;
+    color: #7d4793;
+    content: "\201C";
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1;
 }
 
 .home-keynote-copy > a {
@@ -1252,6 +1267,10 @@ tbody tr:hover {
 
     .home-keynote-card {
         grid-template-columns: 125px minmax(0, 1fr);
+    }
+
+    .home-keynote-spotlight {
+        transform: none;
     }
 
     .organizers-grid {

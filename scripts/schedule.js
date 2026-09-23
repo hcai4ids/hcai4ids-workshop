@@ -105,7 +105,13 @@ function buildCalendarFile(schedule, workshop) {
         const childDetails = children
             .map(child => `${child.start}–${child.end} ${child.title || child.activity} (${child.speaker || 'Details to be confirmed'})`)
             .join('\n');
-        const description = [item.description, childDetails].filter(Boolean).join('\n\n');
+        const keynoteDetails = item.type === 'keynote'
+            ? [
+                item.title,
+                [item.speaker, item.speaker_title, item.institution].filter(Boolean).join(', ')
+            ].filter(Boolean).join('\n')
+            : '';
+        const description = [item.description, keynoteDetails, childDetails].filter(Boolean).join('\n\n');
         const uid = `${workshopDate}-${item.id.replace(/[^a-zA-Z0-9]/g, '-') }@hcai4ids-workshop`;
 
         calendarLines.push(
@@ -164,17 +170,16 @@ function renderAgendaRow(item, children) {
     const keynoteMeta = item.type === 'keynote'
         ? `
             <div class="keynote-placeholder">
-                <div class="keynote-field">
-                    <span class="placeholder-label">Talk</span>
-                    <strong>${escapeProgramHTML(item.title)}</strong>
-                </div>
-                <div class="keynote-field">
-                    <span class="placeholder-label">Presenter</span>
-                    <strong>${escapeProgramHTML(item.speaker)}</strong>
-                </div>
+                <strong class="keynote-talk-title">${escapeProgramHTML(item.title)}</strong>
+                <strong class="keynote-speaker-name">${escapeProgramHTML(item.speaker)}</strong>
+                <small class="keynote-speaker-meta">${escapeProgramHTML(item.speaker_title)}<br>${escapeProgramHTML(item.institution)}</small>
+                <a class="keynote-detail-link" href="keynote.html">View keynote abstract and bio <span aria-hidden="true">&rarr;</span></a>
             </div>
         `
         : '';
+    const descriptionMarkup = ['presentation', 'keynote'].includes(item.type)
+        ? ''
+        : `<p>${escapeProgramHTML(item.description)}</p>`;
     const subsessions = children.length
         ? `<ol class="subsession-list">${children.map(renderSubsession).join('')}</ol>`
         : '';
@@ -188,7 +193,7 @@ function renderAgendaRow(item, children) {
             </div>
             <article class="agenda-event">
                 <h3>${escapeProgramHTML(item.activity)}</h3>
-                <p>${escapeProgramHTML(item.description)}</p>
+                ${descriptionMarkup}
                 ${keynoteMeta}
                 ${subsessions}
             </article>
@@ -202,7 +207,7 @@ async function populateProgramUpdate() {
 
     try {
         const [programResponse, workshopResponse] = await Promise.all([
-            fetch('data/schedule.csv?v=20260923-keynote', { cache: 'no-store' }),
+            fetch('data/schedule.csv?v=20260923-schedule-clean', { cache: 'no-store' }),
             fetch('data/workshops.csv?v=20260922-program', { cache: 'no-store' })
         ]);
         if (!programResponse.ok || !workshopResponse.ok) throw new Error('Unable to load program data');

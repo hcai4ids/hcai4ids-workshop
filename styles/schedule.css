@@ -442,13 +442,13 @@
 @media print {
     @page {
         size: A4;
-        margin: 11mm;
+        margin: 9mm;
     }
 
     body.program-update-page {
         background: #fff;
         color: #111;
-        font-size: 10pt;
+        font-size: 8.5pt;
     }
 
     .navbar,
@@ -458,7 +458,7 @@
     }
 
     .page-header,
-    .program-update {
+    .page-header + .program-update {
         padding: 0;
     }
 
@@ -473,8 +473,8 @@
     }
 
     .program-update-header h1 {
-        margin: 0 0 2mm;
-        font-size: 24pt;
+        margin: 0 0 1.5mm;
+        font-size: 21pt;
     }
 
     .program-update-header .page-eyebrow {
@@ -482,7 +482,10 @@
     }
 
     .preliminary-program {
-        margin-bottom: 5mm;
+        gap: 0.6mm 6mm;
+        margin-bottom: 4mm;
+        font-size: 8.5pt;
+        line-height: 1.3;
     }
 
     .program-toolbar {
@@ -498,35 +501,101 @@
     }
 
     .agenda-row {
-        min-height: 0;
+        min-height: 0 !important;
         break-inside: avoid;
-        grid-template-columns: 30mm minmax(0, 1fr);
+        grid-template-columns: 27mm minmax(0, 1fr);
     }
 
     .agenda-time {
-        padding: 3mm 0 3mm 2mm;
-        font-size: 8.5pt;
+        padding: 2.2mm 2mm;
+        font-size: 7.5pt;
     }
 
     .agenda-event {
-        margin: 2mm 3mm 2mm 0;
-        padding: 2.5mm 4mm;
+        margin: 1.2mm 2mm 1.2mm 0;
+        padding: 1.5mm 2.5mm;
+        border-left-width: 3px;
+        border-radius: 4px;
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
     }
 
     .agenda-event h3 {
-        font-size: 12pt;
+        margin-bottom: 0.7mm;
+        font-size: 10pt;
+        line-height: 1.15;
     }
 
-    .agenda-event p,
-    .keynote-placeholder strong,
+    .agenda-event p {
+        font-size: 7.5pt;
+        line-height: 1.25;
+    }
+
+    .agenda-row-secondary .agenda-time {
+        padding: 1.7mm 2mm;
+    }
+
+    .agenda-row-secondary .agenda-event {
+        padding: 1.5mm 2.5mm;
+    }
+
+    .agenda-row-secondary .agenda-event h3 {
+        margin-bottom: 0.4mm;
+        font-size: 9pt;
+    }
+
+    .agenda-row-secondary .agenda-event p {
+        font-size: 7.2pt;
+    }
+
+    .subsession-list {
+        gap: 1mm;
+        margin-top: 1.5mm;
+    }
+
+    .subsession {
+        display: grid;
+        grid-template-columns: 21mm minmax(0, 1fr);
+        gap: 1.5mm;
+        padding: 1.2mm 1.8mm;
+        border-radius: 3px;
+    }
+
+    .subsession time {
+        margin: 0;
+        font-size: 7pt;
+    }
+
     .subsession-copy strong {
-        font-size: 8.5pt;
+        font-size: 7.2pt;
+        line-height: 1.2;
     }
 
-    .subsession,
-    .keynote-field {
-        padding: 2mm;
+    .subsession-copy small {
+        font-size: 7pt;
+        line-height: 1.2;
+    }
+
+    .keynote-placeholder {
+        margin-top: 1.2mm;
+    }
+
+    .keynote-talk-title {
+        font-size: 8pt;
+        line-height: 1.25;
+    }
+
+    .keynote-speaker-name {
+        margin-top: 1mm;
+        font-size: 7.5pt;
+    }
+
+    .keynote-speaker-meta {
+        font-size: 7pt;
+        line-height: 1.2;
+    }
+
+    .keynote-detail-link {
+        display: none;
     }
 }

@@ -8,28 +8,6 @@
     padding-bottom: var(--spacing-lg);
 }
 
-.preview-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    margin-bottom: var(--spacing-sm);
-    padding: 0.45rem 0.8rem;
-    border: 1px solid rgba(230, 126, 34, 0.42);
-    border-radius: 999px;
-    background: #fff7ed;
-    color: #8a3f0a;
-    font-size: 0.86rem;
-    font-weight: 700;
-}
-
-.preview-status-dot {
-    width: 0.55rem;
-    height: 0.55rem;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 0 4px rgba(230, 126, 34, 0.14);
-}
-
 .keynote-event-meta {
     margin: 0;
     color: #4c6173;
@@ -104,18 +82,6 @@
     background: #fff;
 }
 
-.keynote-label,
-.preview-kicker,
-.spotlight-eyebrow,
-.schedule-entry-label {
-    margin: 0 0 0.55rem;
-    color: #7d4793;
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.11em;
-    text-transform: uppercase;
-}
-
 .keynote-hero-copy h2 {
     max-width: 900px;
     margin: 0 0 1rem;
@@ -142,20 +108,6 @@
 .speaker-identity span {
     color: #536879;
     font-size: 0.88rem;
-}
-
-.keynote-schedule-link,
-.spotlight-card a,
-.schedule-keynote-card a {
-    color: var(--secondary);
-    font-weight: 750;
-    text-decoration: none;
-}
-
-.keynote-schedule-link:hover,
-.spotlight-card a:hover,
-.schedule-keynote-card a:hover {
-    text-decoration: underline;
 }
 
 .keynote-text-section {
@@ -186,121 +138,6 @@
     margin-bottom: 0;
 }
 
-.integration-heading-row h2 {
-    margin-bottom: var(--spacing-md);
-}
-
-.integration-preview {
-    padding: var(--spacing-xl) 0 var(--spacing-2xl);
-    background: var(--bg-white);
-}
-
-.integration-heading-row {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
-}
-
-.integration-heading-row h2 {
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
-.integration-heading-row > p {
-    max-width: 470px;
-    margin: 0;
-    color: #5d7080;
-    font-size: 0.9rem;
-}
-
-.integration-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--spacing-lg);
-}
-
-.component-preview {
-    padding: var(--spacing-sm);
-    border: 1px dashed #aebbc6;
-    border-radius: 10px;
-    background: #f8fafb;
-}
-
-.component-label {
-    margin: 0 0 0.7rem;
-    color: #687987;
-    font-size: 0.74rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-.spotlight-card {
-    display: grid;
-    grid-template-columns: 92px minmax(0, 1fr);
-    gap: 0.9rem;
-    max-width: 430px;
-    padding: 0.9rem;
-    border-left: 5px solid #7d4793;
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: var(--shadow-sm);
-}
-
-.spotlight-card img {
-    width: 92px;
-    height: 92px;
-    object-fit: cover;
-    border-radius: 6px;
-}
-
-.spotlight-card h3,
-.schedule-keynote-card h3 {
-    margin: 0 0 0.4rem;
-    color: var(--primary);
-}
-
-.spotlight-title {
-    margin-bottom: 0.55rem;
-    color: #3d5060;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 0.88rem;
-    line-height: 1.35;
-    font-weight: 700;
-}
-
-.schedule-keynote-card {
-    display: grid;
-    grid-template-columns: 105px minmax(0, 1fr);
-    gap: var(--spacing-md);
-    height: calc(100% - 1.5rem);
-    padding: var(--spacing-md);
-    border-left: 5px solid #7d4793;
-    border-radius: 8px;
-    background: #f7effb;
-    box-shadow: var(--shadow-sm);
-}
-
-.schedule-keynote-card time {
-    color: #4b3b52;
-    font-variant-numeric: tabular-nums;
-    font-weight: 800;
-}
-
-.schedule-keynote-card h3 {
-    font-size: 1.28rem;
-    line-height: 1.3;
-}
-
-.schedule-keynote-card p:not(.schedule-entry-label) {
-    margin: 0 0 0.6rem;
-    color: #536879;
-    font-weight: 700;
-}
-
 .visually-hidden {
     position: absolute !important;
     width: 1px !important;
@@ -314,8 +151,7 @@
 }
 
 @media (max-width: 860px) {
-    .keynote-hero-card,
-    .integration-grid {
+    .keynote-hero-card {
         grid-template-columns: 1fr;
     }
 
@@ -323,10 +159,6 @@
         width: min(100%, 430px);
     }
 
-    .integration-heading-row {
-        align-items: flex-start;
-        flex-direction: column;
-    }
 }
 
 @media (max-width: 560px) {
@@ -346,12 +178,4 @@
         font-size: 1.75rem;
     }
 
-    .schedule-keynote-card {
-        grid-template-columns: 1fr;
-    }
-
-    .spotlight-card img {
-        width: 92px;
-        height: 92px;
-    }
 }

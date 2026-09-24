@@ -225,8 +225,8 @@ async function populateProgramUpdate() {
         document.getElementById('download-calendar')?.addEventListener('click', () => downloadCalendar(schedule, workshop));
         document.getElementById('print-program')?.addEventListener('click', () => window.print());
     } catch (error) {
-        console.error('Unable to load the program update preview:', error);
-        container.innerHTML = '<p class="agenda-error">The preview could not be loaded. Please run the website through a local web server.</p>';
+        console.error('Unable to load the workshop program:', error);
+        container.innerHTML = '<p class="agenda-error">The program could not be loaded. Please run the website through a local web server.</p>';
     }
 }
 

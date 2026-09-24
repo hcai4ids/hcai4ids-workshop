@@ -1,7 +1,7 @@
 id,parent_id,start,end,activity,type,description,title,speaker,speaker_title,institution
 1,,09:30,09:45,Workshop Introduction,organizer,"Opening remarks, workshop goals, and agenda overview",,
 2,,09:45,10:30,Participant Presentations,presentation,,,,,
-2.1,2,09:50,10:05,Presentation 1,talk,"Presenter details to be confirmed",Supporting the Development of Designers Rather Than Designs: The Role of AI in Design Decisions for Immersive Analytics,Presenter to be confirmed
+2.1,2,09:50,10:05,Presentation 1,talk,"Presenter details to be confirmed",Supporting the Development of Designers Rather Than Designs: The Role of AI in Design Decisions for Immersive Analytics, Ingela Rossing
 2.2,2,10:10,10:25,Presentation 2,talk,"Presenter details to be confirmed",Where Are We with J.A.R.V.I.S.? An Analysis of Diegetic Human-AI Interaction and Design Implications for Real-World Systems,Presenter to be confirmed
 3,,10:30,11:00,Coffee Break,break,"Coffee break, informal networking, and optional demo showcase",,
 4,,11:00,11:40,Keynote Presentation,keynote,,As we may think next: immersive sense making from the memex to the chatbot,Mario Romero,Senior Associate Professor,Linköping University

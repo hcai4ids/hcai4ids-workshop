@@ -326,6 +326,18 @@
     line-height: 1.35;
 }
 
+.keynote-session-meta {
+    margin-top: 0.45rem;
+    color: #65717c;
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.keynote-session-meta a {
+    color: #654179;
+    font-weight: 750;
+}
+
 .keynote-detail-link {
     align-self: flex-start;
     margin-top: 0.42rem;

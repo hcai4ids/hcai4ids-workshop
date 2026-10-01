@@ -482,6 +482,18 @@ section:nth-child(even) {
     line-height: 1;
 }
 
+.home-keynote-session {
+    margin: 0 0 0.55rem;
+    color: #5b6e7d;
+    font-size: 0.7rem;
+    line-height: 1.45;
+}
+
+.home-keynote-session a {
+    color: #654179;
+    font-weight: 750;
+}
+
 .home-keynote-copy > a {
     margin-top: auto;
     color: var(--secondary);

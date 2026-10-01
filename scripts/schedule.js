@@ -173,6 +173,7 @@ function renderAgendaRow(item, children) {
                 <strong class="keynote-talk-title">${escapeProgramHTML(item.title)}</strong>
                 <strong class="keynote-speaker-name">${escapeProgramHTML(item.speaker)}</strong>
                 <small class="keynote-speaker-meta">${escapeProgramHTML(item.speaker_title)}<br>${escapeProgramHTML(item.institution)}</small>
+                <small class="keynote-session-meta"><strong>Hybrid:</strong> Room E610 / <a href="https://bth.zoom.us/j/66886140292" target="_blank" rel="noopener">Join via Zoom</a></small>
                 <a class="keynote-detail-link" href="keynote.html">View keynote abstract and bio <span aria-hidden="true">&rarr;</span></a>
             </div>
         `

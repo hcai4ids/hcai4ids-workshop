@@ -299,6 +299,11 @@ a:hover {
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
+.event-details a {
+    color: var(--accent-light);
+    text-decoration: underline;
+}
+
 /* ===========================
    Sections
    =========================== */
@@ -492,6 +497,11 @@ section:nth-child(even) {
 .home-keynote-session a {
     color: #654179;
     font-weight: 750;
+}
+
+.home-keynote-session .home-keynote-slides-link {
+    color: var(--accent);
+    text-decoration: underline;
 }
 
 .home-keynote-copy > a {

@@ -14,15 +14,24 @@
     font-weight: 650;
 }
 
-.keynote-online-access {
+.keynote-event-ended {
+    text-decoration: line-through;
+}
+
+.keynote-event-meta a {
+    color: #654179;
+    font-weight: 750;
+}
+
+.keynote-slides-link {
     margin: 0.35rem 0 0;
-    color: #4c6173;
     font-size: 0.92rem;
 }
 
-.keynote-online-access a {
-    color: #654179;
+.keynote-slides-link a {
+    color: #c62828;
     font-weight: 750;
+    text-decoration: underline;
 }
 
 .keynote-container {

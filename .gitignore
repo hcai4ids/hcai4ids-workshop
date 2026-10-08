@@ -11,6 +11,7 @@ desktop.ini
 # Generated deployment folders
 dist/
 build/
+tmp/
 
 # Local logs
 *.log

@@ -15,3 +15,25 @@ tmp/
 
 # Local logs
 *.log
+
+# Internal documentation (keep the public repository README)
+*.md
+!README.md
+
+# Local tools, research data, and generated materials
+.codex/
+.agents/
+.figure_deps/
+.python_packages/
+node_modules/
+__pycache__/
+*.pyc
+output/
+outputs/
+HCAI4IDS_WordCard_Results_Tables_readonly.xlsx
+
+# Track only the website scripts; other scripts stay local
+/scripts/*
+!/scripts/generate.py
+!/scripts/load-content.js
+!/scripts/schedule.js
